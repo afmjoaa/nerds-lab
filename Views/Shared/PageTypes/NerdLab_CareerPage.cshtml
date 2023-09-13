@@ -1,0 +1,27 @@
+﻿@addTagHelper *, Kentico.Content.Web.Mvc
+
+@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.NerdLab.CareerPage>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+
+@section styles
+{
+    @* Includes CSS necessary for page builder functionality *@
+    <page-builder-styles/>
+    <link rel="stylesheet" href="~/css/career.css">
+}
+
+@section scripts
+{
+    @* Includes scripts necessary for page builder functionality *@
+    <page-builder-scripts/>
+}
+
+<div class="career-container">
+    @Html.Raw(Model.Page.Fields.CareerContent)
+    <editable-area area-identifier="editableArea"/>
+    
+    @await Component.InvokeAsync("CareerItem")
+</div>

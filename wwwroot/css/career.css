@@ -1,0 +1,68 @@
+.career-container{
+    color: var(--text-color-white);
+    text-align: justify;
+    margin: 20px 30px;
+    padding: 30px 50px;
+    min-height: calc(100vh - 430px);
+}
+
+.career-container h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.career-container p {
+    font-size: 16px;
+    margin: 16px 0;
+    font-weight: lighter;
+}
+
+.career-item {
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    border-radius: 30px; /* Rounded border */
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    padding: 30px 50px;
+    color: var(--text-color-white);
+    background-color: var(--overlay-color-one);
+}
+
+.ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color); /* Ribbon background color */
+    color: var(--text-color-dark-gray); /* Text color */
+    padding: 14px; /* Adjust padding as needed */
+    border-bottom-left-radius: 30px; /* Rounded corner for ribbon */
+}
+
+
+/* Style the floating button */
+.floating-button {
+    position: absolute;
+    bottom: 50px; /* Adjust the distance from the bottom */
+    right: 50px; /* Adjust the distance from the right */
+    background-color: var(--overlay-color-two); /* Button background color */
+    color: var(--primary-color-one); /* Button text color */
+    border: none;
+    border-radius: 50%;
+    width: 150px; /* Button width */
+    height: 150px; /* Button height */
+    text-align: center;
+    line-height: 150px; /* Vertically center the text */
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button background color on hover */
+.floating-button:hover {
+    color: var(--text-color-dark-gray); /* Change text color on hover */
+    background-color: var(--primary-color-one); /* Change background color on hover */
+}

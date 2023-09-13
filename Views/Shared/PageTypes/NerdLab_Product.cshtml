@@ -1,0 +1,70 @@
+﻿@addTagHelper *, Kentico.Content.Web.Mvc
+
+@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.NerdLab.Product>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+
+@section styles
+{
+    @* Includes CSS necessary for page builder functionality *@
+    <page-builder-styles/>
+     <link rel="stylesheet" href="~/css/product.css">
+}
+
+@section scripts
+{
+    @* Includes scripts necessary for page builder functionality *@
+    <page-builder-scripts/>
+}
+
+@{
+    var color = "#F7E290";
+    if (@Model.Page.Fields.StatusProgressColor == 0)
+    {
+        color = "#F7E290";
+    }
+    else if (@Model.Page.Fields.StatusProgressColor == 1)
+    {
+        color = "#a7acec";
+    }
+    else
+    {
+        color = "#EA9595";
+    }
+}
+
+<div class="product-container">
+    <div class="video-container">
+        <iframe src="@Model.Page.Fields.VideoLink" ></iframe>
+    </div>
+    <h2>@Model.Page.Fields.Title</h2>
+    @Html.Raw(Model.Page.Fields.Description)
+
+    <div class="image-container">
+        <img src="@Model.Page.Fields.ImageLink" alt="Your Image Description">
+    </div>
+
+    <h2>@Model.Page.Fields.UsecaseTitle</h2>
+    @Html.Raw(Model.Page.Fields.UsecaseDescription)
+
+    <h2>@Model.Page.Fields.PricingTitle</h2>
+    @Html.Raw(Model.Page.Fields.PricingDescription)
+
+    @* <h2>Partners</h2> *@
+    @* <div class="partner-container"> *@
+    @*     <div class="partner-items"> *@
+    @*         <div class="partners">Item 1</div> *@
+    @*         <div class="partners">Item 2</div> *@
+    @*         <div class="partners">Item 3</div> *@
+    @*         <div class="partners">Item 4</div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    <h2>@Model.Page.Fields.StatusTitle</h2>
+    @Html.Raw(Model.Page.Fields.StatusDescription)
+    <div class="progress-bar">
+        <div class="progress-level" style="--progress: @Model.Page.Fields.StatusProgressPercentage.ToString()%; --color: @color;"></div>
+    </div>
+</div>

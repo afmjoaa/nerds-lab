@@ -1,0 +1,19 @@
+﻿@using nerds_lab.Models;
+
+@model IEnumerable<AboutItemViewModel>
+
+@foreach (AboutItemViewModel aboutItemViewModel in Model)
+
+{   
+    @* Iterates through the view model collection and renders HTML links for the Career items *@
+    <div class="about-container">
+        <div class="about-container-left">
+            <h2>@aboutItemViewModel.Name</h2>
+            <p>@aboutItemViewModel.Designation</p>
+            @Html.Raw(aboutItemViewModel.Quote)
+        </div>
+        <div class="about-container-right">
+            <img class="about-person-image" src="@aboutItemViewModel.Image" alt="Circular Image">
+        </div>
+    </div>
+}

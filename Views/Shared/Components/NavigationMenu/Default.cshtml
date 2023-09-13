@@ -1,0 +1,30 @@
+﻿@using nerds_lab.Models;
+
+@model IEnumerable<NavigationItemViewModel>
+
+<nav class="navbar">
+    <a href="~/" class="logo">Nerds Lab</a>
+    <ul class="nav-links">
+        @foreach (NavigationItemViewModel navigationItem in Model)
+        {
+        @* Iterates through the view model collection and renders HTML links for the menu items *@
+            if (navigationItem.MenuItemText == "More")
+            {
+                <li>
+                    <a href="@navigationItem.MenuItemRelativeUrl" title="@navigationItem.MenuItemText" onclick="openModal()">
+                        <i class="material-icons" style="font-size:12px">more_horiz</i>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="@navigationItem.MenuItemRelativeUrl" title="@navigationItem.MenuItemText">
+                        @navigationItem.MenuItemText
+                    </a>
+                </li>
+            }
+
+        }
+    </ul>
+</nav>

@@ -1,0 +1,25 @@
+﻿@addTagHelper *, Kentico.Content.Web.Mvc
+
+@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.NerdLab.AboutPage>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+
+@section styles
+{
+    @* Includes CSS necessary for page builder functionality *@
+    <page-builder-styles/>
+    <link rel="stylesheet" href="~/css/about_us.css">
+}
+
+@section scripts
+{
+    @* Includes scripts necessary for page builder functionality *@
+    <page-builder-scripts/>
+}
+
+<div class="about-us-content-container">
+    @Html.Raw(Model.Page.Fields.AboutUsContent)
+    @await Component.InvokeAsync("AboutItem")
+</div>

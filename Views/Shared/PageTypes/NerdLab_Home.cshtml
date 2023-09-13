@@ -1,0 +1,68 @@
+﻿@addTagHelper *, Kentico.Content.Web.Mvc
+
+@using CMS.DataEngine
+@using CMS.DocumentEngine
+@using CMS.DocumentEngine.Types.NerdLab
+@using CMS.MediaLibrary
+@using Kentico.Content.Web.Mvc
+@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.NerdLab.Home>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+
+@section styles
+{
+    @* Includes CSS necessary for page builder functionality *@
+    <page-builder-styles/>
+    <link rel="stylesheet" href="~/css/home_item.css">
+}
+
+@section scripts
+{
+    @* Includes scripts necessary for page builder functionality *@
+    <page-builder-scripts/>
+}
+
+@{
+    // This is C# code
+    MediaFileInfo assetToMediaFileInfo =
+        new ObjectQuery<MediaFileInfo>().ForAssets(@Model.Page.Fields.Icon).GetEnumerableTypedResult().First();
+    string nerdsLabIconUrl = MediaLibraryHelper.GetDirectUrl(assetToMediaFileInfo);
+}
+
+@{
+    FeatureItem featureItem = (FeatureItem)@Model.Page.Fields.FeatureItem.First();
+}
+
+
+<div class="intro-container">
+    <div class="intro-left-section">
+        <h2>@Model.Page.Fields.Title</h2>
+        <p>@Model.Page.Fields.Description</p>
+
+    </div>
+    <div class="intro-right-section">
+        <img class="intro-image" src="@nerdsLabIconUrl" alt="Nerds Lab Icon">
+    </div>
+    <editable-area area-identifier="editableArea"/>
+</div>
+
+<!--  Feature Home Item-->
+<a class="no-underline" href="~/products" title="~/products">
+<div class="feature-home-item">
+    <div class="feature-item-left-section">
+        <button class="image-button">
+            <img src="~/assets/play_icon.png" alt="Play Image">
+        </button>
+    </div>
+    <div class="feature-item-right-section">
+        <h2>@featureItem.Fields.Title</h2>
+        <p>
+            @featureItem.Fields.Description
+        </p>
+    </div>
+</div>
+</a>
+
+@await Component.InvokeAsync("HomeItem")

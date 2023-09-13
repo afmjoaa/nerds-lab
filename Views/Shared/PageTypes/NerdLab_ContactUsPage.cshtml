@@ -1,0 +1,25 @@
+﻿@addTagHelper *, Kentico.Content.Web.Mvc
+
+@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.NerdLab.ContactUsPage>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+
+@section styles
+{
+    @* Includes CSS necessary for page builder functionality *@
+    <page-builder-styles/>
+    <link rel="stylesheet" href="~/css/contact_us.css">
+}
+
+@section scripts
+{
+    @* Includes scripts necessary for page builder functionality *@
+    <page-builder-scripts/>
+}
+
+<div class="contact-container">
+    @Html.Raw(Model.Page.Fields.ContactUsContent)
+    <editable-area area-identifier="editableArea"/>
+</div>

@@ -1,0 +1,9 @@
+﻿.config/
+
+.git/
+
+.idea/
+
+obj/
+
+bin/

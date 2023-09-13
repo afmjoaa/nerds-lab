@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Sample NerdsLab Site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta name="theme-color" content="#fafafa">
+
+  <title>Nerds Lab - @ViewBag.Title</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="apple-touch-icon" href="~/assets/icon.png">
+
+  <link rel="stylesheet" type="text/css" href="~/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="~/css/main.css">
+  <link rel="stylesheet" type="text/css" href="~/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="~/css/footer.css">
+  
+  @* Razor section for additional page-specific styles *@
+  @RenderSection("styles", required: false)
+</head>
+
+<body id="main-body">
+  @await Component.InvokeAsync("NavigationMenu")
+
+  @RenderBody()
+
+  <footer class="footer">
+    <div class="footer-part">
+      <p class="footer-header">Company</p>
+      <ul class="footer-list">
+        <li><a href="~/careerpage" title="Career Page">Career</a></li>
+        <li><a href="~/privacy" title="Privacy">Privacy</a></li>
+        <li><a href="~/aboutpage" title="About Us">About Us</a></li>
+        <li><a href="~/contactus" title="Contact Us">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-part">
+      <p class="footer-header">Support</p>
+      <ul class="footer-list">
+        <li><a href="#">Invest</a></li>
+        <li><a href="#">Sponsor Us</a></li>
+        <li><a href="#">Patreon</a></li>
+        <li><a href="#">Buy Us Coffee</a></li>
+      </ul>
+    </div>
+    <div class="footer-part">
+      <p class="footer-header">Social</p>
+      <ul class="footer-list">
+        <li><a href="#">Github</a></li>
+        <li><a href="#">Youtube</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Discord</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Modal (dialog) -->
+  <div class="modal-background" id="modalBackground" onclick="closeModal(event)">
+    <div class="modal-content" onclick="stopPropagation(event)">
+      <ul class="more-nav-links">
+        <li><a href="#">Job Finder</a></li>
+        <li><a href="#">Aspectify</a></li>
+        <li><a href="#">Item 3</a></li>
+        <li><a href="#">Item 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="~/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="~/js/plugins.js"></script>
+  <script src="~/js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+  <script>
+    VANTA.TOPOLOGY({
+      el: "#main-body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x88100,
+      backgroundColor: 0x010204
+    })
+  </script>
+
+  @* Razor section for additional page-specific scripts *@
+  @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+﻿@using nerds_lab.Models;
+
+@model IEnumerable<HomeItemViewModel>
+
+@foreach (HomeItemViewModel homeItem in Model)
+
+{   var color = "#F7E290";
+    var icon = "star";
+    if (@homeItem.HomeItemProgressColor == 0)
+    {
+        color = "#F7E290";
+        icon = "star";
+    }else if (@homeItem.HomeItemProgressColor == 1)
+    {
+        color = "#a7acec";
+        icon = "local_fire_department";
+    }
+    else
+    {
+        color = "#EA9595";
+        icon = "stars";
+    }
+    
+    @* Iterates through the view model collection and renders HTML links for the menu items *@
+    <a class="no-underline" href="@homeItem.HomeItemPageLink" title="@homeItem.HomeItemTitle">
+        <div class="home-item">
+            <div class="ribbon" style="--color: @color;">
+                <i class="material-icons" style="font-size:26px">@icon</i>
+            </div>
+            <div>
+                <h2>@homeItem.HomeItemTitle</h2>
+                @Html.Raw(@homeItem.HomeItemDescription)
+                <p>@homeItem.HomeItemProgressText</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-level" style="--progress: @homeItem.HomeItemProgressPercentage.ToString()%; --color: @color;"></div>
+            </div>
+        </div>
+    </a>
+}

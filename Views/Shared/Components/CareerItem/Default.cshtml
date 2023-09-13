@@ -1,0 +1,41 @@
+﻿@using nerds_lab.Models;
+
+@model IEnumerable<CareerItemViewModel>
+
+@foreach (CareerItemViewModel careerItem in Model)
+
+{   var color = "#F7E290";
+    var icon = "star";
+    if (@careerItem.CareerItemRibbonColor == 0)
+    {
+        color = "#F7E290";
+        icon = "star";
+    }else if (@careerItem.CareerItemRibbonColor == 1)
+    {
+        color = "#a7acec";
+        icon = "local_fire_department";
+    }
+    else
+    {
+        color = "#EA9595";
+        icon = "stars";
+    }
+    
+    @* Iterates through the view model collection and renders HTML links for the Career items *@
+    <div class="career-item">
+        <div class="ribbon" style="--color: @color;">
+            <i class="material-icons" style="font-size:26px">@icon</i>
+        </div>
+        <div>
+            <h2>@careerItem.CareerItemTitle</h2>
+            @Html.Raw(careerItem.CareerItemDescription)
+            <p>@careerItem.CareerItemResponsibility</p>
+            <p>@careerItem.CareerItemTechStack</p>
+            <p>@careerItem.CareerItemProject</p>
+            <p>@careerItem.CareerItemExperience</p>
+            <p>@careerItem.CareerItemLocation</p>
+            <p>@careerItem.CareerItemCompensation</p>
+        </div>
+        <a href="#" class="floating-button">@careerItem.CareerItemApplyText</a>
+    </div>
+}
