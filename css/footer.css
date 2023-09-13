@@ -1,0 +1,62 @@
+/* Set up a container for the page content */
+/*.content {*/
+/*    background-color: var(--background-color);*/
+/*    min-height: calc(100vh - 280px); !* Subtract the footer height *!*/
+/*}*/
+
+/* Reset default margin and padding for the footer */
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    background-color: var(--overlay-color-one);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+}
+
+.footer-part {
+    flex-basis: calc(33.33% - 20px); /* Divide the footer into three equal parts with spacing */
+    text-align: left;
+}
+
+.footer-header {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color-white);
+}
+
+.footer-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default list padding */
+    margin: 0; /* Remove default list margin */
+}
+
+/* Style the list items */
+.footer-list li {
+    padding: 10px 0px;
+    margin: 12px 0px;
+    font-size: 12px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: var(--primary-color-one);
+    background-color: var(--overlay-color-two);
+    padding: 10px 20px; /* Add padding to the buttons with round corners */
+    border-radius: 14px;
+    transition: color 0.3s, background-color 0.3s; /* Add hover transition */
+}
+
+/* Hover effect */
+.footer-list a:hover {
+    color: var(--text-color-dark-gray); /* Change text color on hover */
+    background-color: var(--primary-color-one); /* Change background color on hover */
+}

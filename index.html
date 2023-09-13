@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Sample NerdsLab Site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta name="theme-color" content="#fafafa">
+
+  <title>Nerds Lab</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home_item.css">
+</head>
+
+<body id="main-body">
+  <nav class="navbar">
+    <a href="#" class="logo">Nerds Lab</a>
+    <ul class="nav-links">
+      <li><a href="#">Curious Learner</a></li>
+      <li><a href="#">Mind Reader</a></li>
+      <li><a href="#">GODB</a></li>
+      <li><a href="#">Signature Verifier</a></li>
+      <li><a href="#">JJS-Flow</a></li>
+      <li><a onclick="openModal()" href="#"><i class="material-icons" style="font-size:12px">more_horiz</i></a></li>
+    </ul>
+  </nav>
+
+  <div class="intro-container">
+    <div class="intro-left-section">
+      <h2>The Complete AI Solution for Your Company.</h2>
+      <p>The Platform where you can get custom models and AI services based on your demand tailored to your use cases.</p>
+    </div>
+    <div class="intro-right-section">
+      <img class="intro-image" src="assets/nerdslab_icon.png" alt="Nerds Lab Icon">
+    </div>
+  </div>
+
+  <!--  Feature Home Item-->
+  <div class="feature-home-item">
+    <div class="feature-item-left-section">
+      <button class="image-button">
+        <img src="assets/play_icon.png" alt="Play Image">
+      </button>
+    </div>
+    <div class="feature-item-right-section">
+      <h2>Curious Learner</h2>
+      <p>
+        Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+       </p>
+    </div>
+  </div>
+
+  <!-- Home item One-->
+  <div class="home-item">
+    <div class="ribbon" style="--color: var(--primary-color-two);">
+      <i class="material-icons" style="font-size:26px">stars</i>
+    </div>
+    <div>
+      <h2>Curious Learner</h2>
+      <p>
+        Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Progress: </p>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-level" style="--progress: 50%; --color: var(--primary-color-two);"></div>
+    </div>
+  </div>
+
+  <!-- Home item Two-->
+  <div class="home-item">
+    <div class="ribbon" style="--color: var(--primary-color-three);">
+      <i class="material-icons" style="font-size:26px">local_fire_department</i>
+    </div>
+    <div>
+      <h2>Curious Learner</h2>
+      <p>
+        Description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Progress: </p>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-level" style="--progress: 50%; --color: var(--primary-color-three);"></div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-part">
+      <p class="footer-header">Company</p>
+      <ul class="footer-list">
+        <li><a href="#">Career</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-part">
+      <p class="footer-header">Support</p>
+      <ul class="footer-list">
+        <li><a href="#">Invest</a></li>
+        <li><a href="#">Sponsor Us</a></li>
+        <li><a href="#">Patreon</a></li>
+        <li><a href="#">Buy Us Coffee</a></li>
+      </ul>
+    </div>
+    <div class="footer-part">
+      <p class="footer-header">Social</p>
+      <ul class="footer-list">
+        <li><a href="#">Github</a></li>
+        <li><a href="#">Youtube</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Discord</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Modal (dialog) -->
+  <div class="modal-background" id="modalBackground" onclick="closeModal(event)">
+    <div class="modal-content" onclick="stopPropagation(event)">
+      <ul class="more-nav-links">
+        <li><a href="#">Job Finder</a></li>
+        <li><a href="#">Aspectify</a></li>
+        <li><a href="#">Item 3</a></li>
+        <li><a href="#">Item 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+  <script>
+    VANTA.TOPOLOGY({
+      el: "#main-body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x88100,
+      backgroundColor: 0x010204
+    })
+  </script>
+</body>
+
+</html>

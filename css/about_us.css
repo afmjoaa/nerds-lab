@@ -1,0 +1,47 @@
+/* Reset some default browser styles for consistency */
+.about-container h2,
+.about-container p {
+    margin: 10px 180px 10px 0;
+    padding: 0;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.about-container p {
+    font-weight: lighter;
+}
+
+/* Define the container to split into two columns */
+.about-container {
+    display: flex;
+    width: 100%;
+    color: var(--text-color-white);
+}
+
+/* Left column styles (70% width) */
+.about-container-left {
+    flex: 70%;
+    height: 300px;
+    margin: 30px 30px 0 30px;
+    background-image: url('../assets/pentagon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 30px 50px;
+}
+
+/* Right column styles (30% width) */
+.about-container-right {
+    display: flex;
+    flex: 30%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-person-image{
+    height: 210px;
+    width: 210px;
+    padding: 20px;
+    border: 6px solid var(--primary-color-one);
+    border-radius: 100%;
+}
